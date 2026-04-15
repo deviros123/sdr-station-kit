@@ -39,10 +39,12 @@ Tested with:
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USER/sdr-station-kit.git
+git clone https://github.com/deviros123/sdr-station-kit.git
 cd sdr-station-kit
 sudo ./install.sh
 ```
+
+> **New to SDR?** See the [Complete Setup Guide](docs/SETUP.md) for step-by-step instructions covering hardware purchase, OS installation, antenna selection, and configuration.
 
 After installation:
 - **Receiver**: `http://<pi-ip>:8073`
