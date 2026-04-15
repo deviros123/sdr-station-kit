@@ -19,12 +19,24 @@ echo "$(date -u) - Capturing ${CHART_NAME} on ${FREQ} Hz for ${DURATION}s" >> $L
 
 # Stop OpenWebRX to free the RSP1B
 docker stop openwebrx >> $LOGFILE 2>&1
-sleep 3
+sleep 5
 
-# Start SDRplay API on host
-/usr/local/bin/sdrplay_apiService &
+# Kill any lingering sdrplay API service
+pkill -f sdrplay_apiService 2>/dev/null
+sleep 2
+
+# Start fresh SDRplay API on host
+/opt/sdrplay_api/sdrplay_apiService &
 APIPID=$!
-sleep 3
+sleep 5
+
+# Verify device is found
+if ! SoapySDRUtil --find="driver=sdrplay" 2>/dev/null | grep -q "sdrplay"; then
+    echo "$(date -u) - ERROR: RSP1B not found, aborting" >> $LOGFILE
+    kill $APIPID 2>/dev/null
+    docker start openwebrx >> $LOGFILE 2>&1
+    exit 1
+fi
 
 # Capture and demodulate using Python + SoapySDR
 python3 /home/dragon/wxfax-record.py $FREQ $DURATION "$WAVFILE" >> $LOGFILE 2>&1
@@ -33,6 +45,7 @@ RESULT=$?
 # Stop SDRplay API
 kill $APIPID 2>/dev/null
 wait $APIPID 2>/dev/null
+sleep 2
 
 # Restart OpenWebRX
 docker start openwebrx >> $LOGFILE 2>&1
@@ -55,7 +68,7 @@ else
 fi
 
 # Regenerate gallery
-python3 /home/dragon/wxfax-gallery.py >> $LOGFILE 2>&1
+python3 /home/dragon/weather-dashboard.py >> $LOGFILE 2>&1
 
 # Clean up old files (keep 7 days)
 find "${OUTDIR}/wav" -name "*.wav" -mtime +7 -delete 2>/dev/null
