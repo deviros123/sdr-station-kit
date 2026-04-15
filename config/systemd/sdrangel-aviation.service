@@ -1,0 +1,16 @@
+[Unit]
+Description=SDRangel - Aviation/FM (E4000)
+After=network.target rtl-tcp-e4000.service
+Wants=rtl-tcp-e4000.service
+
+[Service]
+Type=simple
+User=dragon
+Environment=QT_QPA_PLATFORM=offscreen
+ExecStartPre=/bin/sleep 30
+ExecStart=/opt/install/sdrangel/bin/sdrangelsrv -a 0.0.0.0 -p 8093
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

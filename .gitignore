@@ -1,0 +1,10 @@
+*.wav
+*.pyc
+__pycache__/
+weatherfax/wav/
+weatherfax/images/
+weatherfax/latest/
+weather-text/
+sdr-scan.log
+sdr-scan-report.json
+*.tmp

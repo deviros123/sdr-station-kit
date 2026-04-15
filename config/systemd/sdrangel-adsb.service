@@ -1,0 +1,16 @@
+[Unit]
+Description=SDRangel - ADS-B Aircraft Tracking
+After=network.target rtl-tcp-adsb.service
+Wants=rtl-tcp-adsb.service
+
+[Service]
+Type=simple
+User=dragon
+Environment=QT_QPA_PLATFORM=offscreen
+ExecStartPre=/bin/sleep 20
+ExecStart=/opt/install/sdrangel/bin/sdrangelsrv -a 0.0.0.0 -p 8091
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,83 @@
+# Surface Analysis (key charts, 4x daily)
+# Satellite imagery (2x daily)
+# 500mb Analysis (2x daily)
+# Sea State Analysis (2x daily)
+# Wind & Wave forecasts
+# SST Analysis
+# 48hr forecasts
+# === WEATHER FAX - NMC Point Reyes ===
+# ============================================
+# SDR Automated Capture Schedule
+# All times UTC. Tasks use RSP1B (must not overlap)
+# Each fax capture: ~12 min, each NAVTEX: ~11 min
+# Min 2 min gap between RSP1B tasks
+# EAS uses RTL-SDR (no RSP1B conflict)
+# ============================================
+
+# --- 00:xx UTC (17:xx PDT) ---
+0 0 * * * /home/dragon/weather-monitor.sh navtex 518000 600
+
+# --- 01:xx UTC (18:xx PDT) ---
+43 1 * * * /home/dragon/wxfax-capture.sh 4346000 ptreyes_satellite 660
+
+# --- 02:xx UTC (19:xx PDT) ---
+0 2 * * * /home/dragon/wxfax-capture.sh 4296000 kodiak_surface_00z 720
+30 2 * * * /home/dragon/wxfax-capture.sh 4346000 ptreyes_500mb_00z 600
+
+# --- 03:xx UTC (20:xx PDT) ---
+0 3 * * * /home/dragon/wxfax-capture.sh 4346000 ptreyes_sea_state_00z 600
+31 3 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_surface_00z 720
+
+# --- 04:xx UTC (21:xx PDT) ---
+10 4 * * * /home/dragon/weather-monitor.sh navtex 518000 600
+
+# --- 05:xx UTC (22:xx PDT) ---
+0 5 * * * /home/dragon/wxfax-capture.sh 8457000 kodiak_sea_ice 600
+20 5 * * * /home/dragon/wxfax-capture.sh 8457000 kodiak_24hr_surface 600
+
+# --- 08:xx UTC (01:xx PDT) ---
+0 8 * * * /home/dragon/wxfax-capture.sh 8457000 kodiak_48hr_surface 600
+20 8 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_24hr_wind_wave 600
+40 8 * * * /home/dragon/weather-monitor.sh navtex 518000 600
+
+# --- 09:xx UTC (02:xx PDT) ---
+0 9 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_48hr_surface 600
+31 9 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_surface_06z 720
+
+# --- 12:xx UTC (05:xx PDT) ---
+10 12 * * * /home/dragon/weather-monitor.sh navtex 518000 600
+
+# --- 14:xx UTC (07:xx PDT) ---
+0 14 * * * /home/dragon/wxfax-capture.sh 8457000 kodiak_surface_12z 720
+20 14 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_satellite_12z 660
+45 14 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_500mb_12z 600
+
+# --- 15:xx UTC (08:xx PDT) ---
+5 15 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_surface_12z 720
+
+# --- 16:xx UTC (09:xx PDT) ---
+10 16 * * * /home/dragon/weather-monitor.sh navtex 518000 600
+
+# --- 17:xx UTC (10:xx PDT) ---
+30 17 * * * /home/dragon/wxfax-capture.sh 8457000 kodiak_satellite 660
+
+# --- 18:xx UTC (11:xx PDT) ---
+22 18 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_24hr_wind_wave_12z 600
+45 18 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_sst 660
+
+# --- 20:xx UTC (13:xx PDT) ---
+0 20 * * * /home/dragon/wxfax-capture.sh 8457000 kodiak_wind_wave 600
+20 20 * * * /home/dragon/weather-monitor.sh navtex 518000 600
+40 20 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_48hr_surface_12z 600
+
+# --- 21:xx UTC (14:xx PDT) ---
+24 21 * * * /home/dragon/wxfax-capture.sh 8682000 ptreyes_surface_18z 720
+
+# --- EAS (RTL-SDR only, no RSP1B conflict) ---
+5,35 * * * * /home/dragon/weather-monitor.sh eas 162550000 120
+
+# --- Dashboard regeneration ---
+*/15 * * * * /home/dragon/weather-dashboard.py 2>/dev/null
+
+# --- Weekly full-band scan (Sunday 03:00 - skips fax that hour) ---
+0 23 * * 6 /home/dragon/sdr-weekly-scan.sh

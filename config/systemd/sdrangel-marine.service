@@ -1,0 +1,16 @@
+[Unit]
+Description=SDRangel - Marine/AIS/WX/Railroad
+After=network.target rtl-tcp-marine.service
+Wants=rtl-tcp-marine.service
+
+[Service]
+Type=simple
+User=dragon
+Environment=QT_QPA_PLATFORM=offscreen
+ExecStartPre=/bin/sleep 25
+ExecStart=/opt/install/sdrangel/bin/sdrangelsrv -a 0.0.0.0 -p 8092
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

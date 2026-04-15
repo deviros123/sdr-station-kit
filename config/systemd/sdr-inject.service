@@ -1,0 +1,13 @@
+[Unit]
+Description=Inject bookmarks into OpenWebRX container
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 20
+ExecStart=/home/dragon/openwebrx-inject.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

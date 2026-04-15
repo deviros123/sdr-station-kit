@@ -1,0 +1,14 @@
+[Unit]
+Description=RTL-TCP for R820T SN:81796306 Marine (device 2)
+After=network.target
+
+[Service]
+Type=simple
+User=dragon
+ExecStartPre=/bin/sleep 13
+ExecStart=/usr/bin/rtl_tcp -d 2 -a 127.0.0.1 -p 1236 -s 2400000 -f 162000000 -g 396
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

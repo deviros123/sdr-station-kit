@@ -1,0 +1,1310 @@
+{
+  "sdrs": {
+    "rtlsdr-e4000": {
+      "name": "E4000 Aviation/VHF",
+      "type": "rtl_sdr",
+      "device": "0",
+      "profiles": {
+        "aviation_approach": {
+          "name": "Aviation: KSEA Approach (123-126 MHz)",
+          "center_freq": 125000000,
+          "samp_rate": 2400000,
+          "start_freq": 124200000,
+          "start_mod": "am"
+        },
+        "aviation_tower": {
+          "name": "Aviation: KSEA Tower/Ground (119-122 MHz)",
+          "center_freq": 120600000,
+          "samp_rate": 2400000,
+          "start_freq": 119900000,
+          "start_mod": "am"
+        },
+        "aviation_atis": {
+          "name": "Aviation: ATIS/Clearance (127-130 MHz)",
+          "center_freq": 128500000,
+          "samp_rate": 2400000,
+          "start_freq": 128000000,
+          "start_mod": "am"
+        },
+        "aviation_departure": {
+          "name": "Aviation: Departure (134-137 MHz)",
+          "center_freq": 135500000,
+          "samp_rate": 2400000,
+          "start_freq": 135775000,
+          "start_mod": "am"
+        },
+        "noaa_sat": {
+          "name": "NOAA Satellites (136-139 MHz)",
+          "center_freq": 137500000,
+          "samp_rate": 2400000,
+          "start_freq": 137100000,
+          "start_mod": "nfm"
+        },
+        "two_meter_low": {
+          "name": "2m Ham Repeaters Low (145-147 MHz)",
+          "center_freq": 146000000,
+          "samp_rate": 2400000,
+          "start_freq": 146520000,
+          "start_mod": "nfm"
+        },
+        "two_meter_high": {
+          "name": "2m Ham Repeaters High (147-149 MHz)",
+          "center_freq": 148000000,
+          "samp_rate": 2400000,
+          "start_freq": 147100000,
+          "start_mod": "nfm"
+        },
+        "murs": {
+          "name": "MURS (151-153 MHz)",
+          "center_freq": 152500000,
+          "samp_rate": 2400000,
+          "start_freq": 151820000,
+          "start_mod": "nfm"
+        },
+        "pse_utility": {
+          "name": "PSE Electric/Gas (152-155 MHz)",
+          "center_freq": 153600000,
+          "samp_rate": 2400000,
+          "start_freq": 153560000,
+          "start_mod": "nfm"
+        },
+        "fire_mutual": {
+          "name": "Fire/EMS Mutual Aid (153-156 MHz)",
+          "center_freq": 154500000,
+          "samp_rate": 2400000,
+          "start_freq": 154280000,
+          "start_mod": "nfm"
+        },
+        "law_enf": {
+          "name": "Law Enforcement/WSP (155-157 MHz)",
+          "center_freq": 155700000,
+          "samp_rate": 2400000,
+          "start_freq": 155505000,
+          "start_mod": "nfm"
+        },
+        "marine_vhf_low": {
+          "name": "Marine VHF Ch6-16 (156-157 MHz)",
+          "center_freq": 156600000,
+          "samp_rate": 2400000,
+          "start_freq": 156800000,
+          "start_mod": "nfm"
+        },
+        "marine_uscg": {
+          "name": "Marine USCG/VTS (157-158 MHz)",
+          "center_freq": 157100000,
+          "samp_rate": 2400000,
+          "start_freq": 157050000,
+          "start_mod": "nfm"
+        },
+        "railroad": {
+          "name": "Railroad BNSF/Amtrak (160-162 MHz)",
+          "center_freq": 161000000,
+          "samp_rate": 2400000,
+          "start_freq": 161550000,
+          "start_mod": "nfm"
+        },
+        "ais_noaa_wx": {
+          "name": "AIS + NOAA Weather (161-164 MHz)",
+          "center_freq": 162200000,
+          "samp_rate": 2400000,
+          "start_freq": 162550000,
+          "start_mod": "nfm"
+        },
+        "acars": {
+          "name": "ACARS Aircraft Messaging (130-132 MHz)",
+          "center_freq": 131000000,
+          "samp_rate": 2400000,
+          "start_freq": 131550000,
+          "start_mod": "am"
+        },
+        "military_vhf": {
+          "name": "Military VHF (138-141 MHz)",
+          "center_freq": 140500000,
+          "samp_rate": 2400000,
+          "start_freq": 138450000,
+          "start_mod": "am"
+        },
+        "cap_mars": {
+          "name": "CAP/MARS (148-150 MHz)",
+          "center_freq": 149000000,
+          "samp_rate": 2400000,
+          "start_freq": 148150000,
+          "start_mod": "nfm"
+        },
+        "pager_vhf": {
+          "name": "Pagers VHF (152-153 MHz)",
+          "center_freq": 152500000,
+          "samp_rate": 2400000,
+          "start_freq": 152480000,
+          "start_mod": "nfm"
+        },
+        "pager_vhf2": {
+          "name": "Pagers VHF (157-159 MHz)",
+          "center_freq": 158000000,
+          "samp_rate": 2400000,
+          "start_freq": 157450000,
+          "start_mod": "nfm"
+        },
+        "tv_news": {
+          "name": "TV News Crew IFB (170-172 MHz)",
+          "center_freq": 171000000,
+          "samp_rate": 2400000,
+          "start_freq": 170150000,
+          "start_mod": "nfm"
+        },
+        "ism_315": {
+          "name": "ISM 315 MHz (Key Fobs/Garage/TPMS)",
+          "center_freq": 315000000,
+          "samp_rate": 2400000,
+          "start_freq": 315000000,
+          "start_mod": "am"
+        },
+        "ism_433": {
+          "name": "ISM 433 MHz (Weather Stn/Sensors)",
+          "center_freq": 433920000,
+          "samp_rate": 2400000,
+          "start_freq": 433920000,
+          "start_mod": "am"
+        },
+        "gps_l1": {
+          "name": "GPS L1 (1575 MHz)",
+          "center_freq": 1575420000,
+          "samp_rate": 2400000,
+          "start_freq": 1575420000,
+          "start_mod": "am"
+        },
+        "iridium": {
+          "name": "Iridium Satellites (1621-1627 MHz)",
+          "center_freq": 1623500000,
+          "samp_rate": 2400000,
+          "start_freq": 1624000000,
+          "start_mod": "nfm"
+        },
+        "ils_vor": {
+          "name": "ILS/VOR Navigation (108-114 MHz)",
+          "center_freq": 111200000,
+          "samp_rate": 2400000,
+          "start_freq": 110300000,
+          "start_mod": "am"
+        },
+        "vor_high": {
+          "name": "VOR Navigation (114-118 MHz)",
+          "center_freq": 116000000,
+          "samp_rate": 2400000,
+          "start_freq": 116800000,
+          "start_mod": "am"
+        },
+        "airline_ops": {
+          "name": "Airline Ops/ACARS (129-132 MHz)",
+          "center_freq": 130500000,
+          "samp_rate": 2400000,
+          "start_freq": 130450000,
+          "start_mod": "am"
+        },
+        "volmet": {
+          "name": "VOLMET Aviation WX (126-128 MHz)",
+          "center_freq": 127000000,
+          "samp_rate": 2400000,
+          "start_freq": 127000000,
+          "start_mod": "am"
+        },
+        "other_airports": {
+          "name": "Regional Airports (132-134 MHz)",
+          "center_freq": 132500000,
+          "samp_rate": 2400000,
+          "start_freq": 132000000,
+          "start_mod": "am"
+        },
+        "logging": {
+          "name": "Logging Ops (153-154 MHz)",
+          "center_freq": 153100000,
+          "samp_rate": 2400000,
+          "start_freq": 153050000,
+          "start_mod": "nfm"
+        },
+        "ski_resort": {
+          "name": "Ski Resorts/Patrol (151-152 MHz)",
+          "center_freq": 151650000,
+          "samp_rate": 2400000,
+          "start_freq": 151625000,
+          "start_mod": "nfm"
+        },
+        "ptc_220": {
+          "name": "Train PTC 220 MHz",
+          "center_freq": 220500000,
+          "samp_rate": 2400000,
+          "start_freq": 220000000,
+          "start_mod": "nfm"
+        },
+        "fm_88_90": {
+          "name": "FM: KNKX 88.5 / KNHC 89.5",
+          "center_freq": 89200000,
+          "samp_rate": 2400000,
+          "start_freq": 88500000,
+          "start_mod": "wfm"
+        },
+        "fm_89_91": {
+          "name": "FM: KEXP 89.9 / KBCS 90.3",
+          "center_freq": 90200000,
+          "samp_rate": 2400000,
+          "start_freq": 89900000,
+          "start_mod": "wfm"
+        },
+        "fm_92_94": {
+          "name": "FM: KZOK 92.5 / KUBE 93.3",
+          "center_freq": 93000000,
+          "samp_rate": 2400000,
+          "start_freq": 92500000,
+          "start_mod": "wfm"
+        },
+        "fm_94_96": {
+          "name": "FM: KMPS 94.1 / KUOW 94.9 / KJR 95.7",
+          "center_freq": 95000000,
+          "samp_rate": 2400000,
+          "start_freq": 94900000,
+          "start_mod": "wfm"
+        },
+        "fm_96_98": {
+          "name": "FM: KJAQ 96.5 / KIRO 97.3",
+          "center_freq": 97000000,
+          "samp_rate": 2400000,
+          "start_freq": 97300000,
+          "start_mod": "wfm"
+        },
+        "fm_98_100": {
+          "name": "FM: KING 98.1 / KVRQ 98.9 / KISW 99.9",
+          "center_freq": 99000000,
+          "samp_rate": 2400000,
+          "start_freq": 98100000,
+          "start_mod": "wfm"
+        },
+        "fm_100_102": {
+          "name": "FM: KQMV 100.7 / KPLZ 101.5",
+          "center_freq": 101200000,
+          "samp_rate": 2400000,
+          "start_freq": 100700000,
+          "start_mod": "wfm"
+        },
+        "fm_102_104": {
+          "name": "FM: KZOK-HD 102.5",
+          "center_freq": 102800000,
+          "samp_rate": 2400000,
+          "start_freq": 102500000,
+          "start_mod": "wfm"
+        },
+        "fm_105_108": {
+          "name": "FM: KCMS 105.3 / KBKS 106.1 / KRWM 106.9 / KNDD 107.7",
+          "center_freq": 106500000,
+          "samp_rate": 2400000,
+          "start_freq": 106100000,
+          "start_mod": "wfm"
+        },
+        "vor_mid": {
+          "name": "VOR Navigation (112-114 MHz)",
+          "center_freq": 113000000,
+          "samp_rate": 2400000,
+          "start_freq": 113400000,
+          "start_mod": "am"
+        },
+        "ils_low": {
+          "name": "ILS Localizer Low (108-110 MHz)",
+          "center_freq": 109000000,
+          "samp_rate": 2400000,
+          "start_freq": 108900000,
+          "start_mod": "am"
+        },
+        "aviation_approach_n": {
+          "name": "Aviation: KSEA Approach North (118-120 MHz)",
+          "center_freq": 119200000,
+          "samp_rate": 2400000,
+          "start_freq": 119200000,
+          "start_mod": "am"
+        },
+        "aviation_ground": {
+          "name": "Aviation: Ground/SAR/Heli (121-124 MHz)",
+          "center_freq": 122500000,
+          "samp_rate": 2400000,
+          "start_freq": 121900000,
+          "start_mod": "am"
+        },
+        "military_uhf": {
+          "name": "Military Emergency 243 MHz",
+          "center_freq": 243000000,
+          "samp_rate": 2400000,
+          "start_freq": 243000000,
+          "start_mod": "am"
+        },
+        "iridium_low": {
+          "name": "Iridium Low (1620-1623 MHz)",
+          "center_freq": 1621500000,
+          "samp_rate": 2400000,
+          "start_freq": 1621350000,
+          "start_mod": "am"
+        },
+        "iridium_high": {
+          "name": "Iridium High (1625-1628 MHz)",
+          "center_freq": 1626500000,
+          "samp_rate": 2400000,
+          "start_freq": 1626500000,
+          "start_mod": "am"
+        },
+        "lte_pcs": {
+          "name": "LTE Band 2 PCS (1929-1932 MHz)",
+          "center_freq": 1930000000,
+          "samp_rate": 2400000,
+          "start_freq": 1930000000,
+          "start_mod": "am"
+        },
+        "lte_aws": {
+          "name": "LTE Band 4 AWS (2109-2112 MHz)",
+          "center_freq": 2110000000,
+          "samp_rate": 2400000,
+          "start_freq": 2110000000,
+          "start_mod": "am"
+        }
+      }
+    },
+    "rtlsdr-r820t-1": {
+      "name": "R820T Marine/AIS/WX",
+      "type": "rtl_sdr",
+      "device": "1",
+      "profiles": {
+        "ais_wx_railroad": {
+          "name": "AIS + NOAA WX + Railroad (160-163 MHz)",
+          "center_freq": 162000000,
+          "samp_rate": 2400000,
+          "start_freq": 161975000,
+          "start_mod": "nfm"
+        },
+        "marine_distress": {
+          "name": "Marine VHF Distress/Calling (155-158 MHz)",
+          "center_freq": 156800000,
+          "samp_rate": 2400000,
+          "start_freq": 156800000,
+          "start_mod": "nfm"
+        },
+        "two_meter_repeaters": {
+          "name": "2m Amateur Repeaters (146-148 MHz)",
+          "center_freq": 147000000,
+          "samp_rate": 2400000,
+          "start_freq": 146960000,
+          "start_mod": "nfm"
+        },
+        "noaa_wx": {
+          "name": "NOAA Weather Radio (162-163 MHz)",
+          "center_freq": 162475000,
+          "samp_rate": 2400000,
+          "start_freq": 162550000,
+          "start_mod": "nfm"
+        },
+        "seattle_city": {
+          "name": "Seattle City Services (453-454 MHz)",
+          "center_freq": 453500000,
+          "samp_rate": 2400000,
+          "start_freq": 453150000,
+          "start_mod": "nfm"
+        },
+        "seattle_police_conv": {
+          "name": "Seattle Police Conventional (460-461 MHz)",
+          "center_freq": 460300000,
+          "samp_rate": 2400000,
+          "start_freq": 460125000,
+          "start_mod": "nfm"
+        },
+        "metro_transit": {
+          "name": "Metro Transit/Port Ops (453-454 MHz)",
+          "center_freq": 453700000,
+          "samp_rate": 2400000,
+          "start_freq": 453650000,
+          "start_mod": "nfm"
+        },
+        "seatac_ops": {
+          "name": "Sea-Tac Airport Ops (460-461 MHz)",
+          "center_freq": 460700000,
+          "samp_rate": 2400000,
+          "start_freq": 460650000,
+          "start_mod": "nfm"
+        },
+        "hospital_med": {
+          "name": "Hospital/EMS UHF (462-464 MHz)",
+          "center_freq": 463000000,
+          "samp_rate": 2400000,
+          "start_freq": 462950000,
+          "start_mod": "nfm"
+        },
+        "frs_gmrs": {
+          "name": "FRS/GMRS (462-463 MHz)",
+          "center_freq": 462650000,
+          "samp_rate": 2400000,
+          "start_freq": 462562500,
+          "start_mod": "nfm"
+        },
+        "seventy_cm": {
+          "name": "70cm Amateur (440-442 MHz)",
+          "center_freq": 441000000,
+          "samp_rate": 2400000,
+          "start_freq": 440575000,
+          "start_mod": "nfm"
+        },
+        "seventy_cm_high": {
+          "name": "70cm Amateur High (443-445 MHz)",
+          "center_freq": 444000000,
+          "samp_rate": 2400000,
+          "start_freq": 443650000,
+          "start_mod": "nfm"
+        },
+        "schools_uw": {
+          "name": "Schools/UW (453-454 MHz)",
+          "center_freq": 453500000,
+          "samp_rate": 2400000,
+          "start_freq": 453250000,
+          "start_mod": "nfm"
+        },
+        "king_county": {
+          "name": "King County Govt (460-461 MHz)",
+          "center_freq": 460400000,
+          "samp_rate": 2400000,
+          "start_freq": 460325000,
+          "start_mod": "nfm"
+        },
+        "tow_taxi": {
+          "name": "Tow/Taxi Dispatch (452-453 MHz)",
+          "center_freq": 452100000,
+          "samp_rate": 2400000,
+          "start_freq": 452050000,
+          "start_mod": "nfm"
+        },
+        "wsf_ops": {
+          "name": "WA State Ferries (453-454 MHz)",
+          "center_freq": 453350000,
+          "samp_rate": 2400000,
+          "start_freq": 453300000,
+          "start_mod": "nfm"
+        },
+        "digital_modes": {
+          "name": "2m Digital FT8/Packet (144-146 MHz)",
+          "center_freq": 145000000,
+          "samp_rate": 2400000,
+          "start_freq": 144174000,
+          "start_mod": "usb"
+        },
+        "sstv_iss": {
+          "name": "ISS SSTV / 2m SSTV (145-146 MHz)",
+          "center_freq": 145600000,
+          "samp_rate": 2400000,
+          "start_freq": 145800000,
+          "start_mod": "nfm"
+        },
+        "air_ambulance": {
+          "name": "Air Ambulance/EMS (155-156 MHz)",
+          "center_freq": 155300000,
+          "samp_rate": 2400000,
+          "start_freq": 155265000,
+          "start_mod": "nfm"
+        },
+        "ft8_70cm": {
+          "name": "70cm FT8/Digital (432 MHz)",
+          "center_freq": 432174000,
+          "samp_rate": 2400000,
+          "start_freq": 432174000,
+          "start_mod": "usb"
+        },
+        "radiosonde": {
+          "name": "Radiosondes/Weather Balloons (400-406 MHz)",
+          "center_freq": 402500000,
+          "samp_rate": 2400000,
+          "start_freq": 400000000,
+          "start_mod": "nfm"
+        },
+        "epirb_elt": {
+          "name": "EPIRB/ELT Emergency Beacons (406 MHz)",
+          "center_freq": 406050000,
+          "samp_rate": 2400000,
+          "start_freq": 406025000,
+          "start_mod": "nfm"
+        },
+        "am_sat": {
+          "name": "Amateur Satellites (436-438 MHz)",
+          "center_freq": 437000000,
+          "samp_rate": 2400000,
+          "start_freq": 436795000,
+          "start_mod": "nfm"
+        },
+        "bellevue_pd": {
+          "name": "Bellevue/Kirkland PD (460 MHz)",
+          "center_freq": 460300000,
+          "samp_rate": 2400000,
+          "start_freq": 460075000,
+          "start_mod": "nfm"
+        },
+        "tacoma_pd": {
+          "name": "Tacoma/Kent PD (460 MHz)",
+          "center_freq": 460400000,
+          "samp_rate": 2400000,
+          "start_freq": 460350000,
+          "start_mod": "nfm"
+        },
+        "fire_surrounding": {
+          "name": "Surrounding Fire Depts (154 MHz)",
+          "center_freq": 154300000,
+          "samp_rate": 2400000,
+          "start_freq": 154190000,
+          "start_mod": "nfm"
+        },
+        "cruise_pier": {
+          "name": "Cruise Ship/Pier 91 Ops (460-461 MHz)",
+          "center_freq": 460900000,
+          "samp_rate": 2400000,
+          "start_freq": 460875000,
+          "start_mod": "nfm"
+        },
+        "fishing_fleet": {
+          "name": "Fishing Fleet VHF (156.3-156.7 MHz)",
+          "center_freq": 156500000,
+          "samp_rate": 2400000,
+          "start_freq": 156375000,
+          "start_mod": "nfm"
+        },
+        "community_transit": {
+          "name": "Community/Pierce Transit (453 MHz)",
+          "center_freq": 453500000,
+          "samp_rate": 2400000,
+          "start_freq": 453375000,
+          "start_mod": "nfm"
+        },
+        "dmr_seattle": {
+          "name": "DMR Seattle Repeaters (440-441 MHz)",
+          "center_freq": 440800000,
+          "samp_rate": 2400000,
+          "start_freq": 440775000,
+          "start_mod": "dmr"
+        },
+        "dstar_seattle": {
+          "name": "D-STAR Seattle (441-442 MHz)",
+          "center_freq": 441300000,
+          "samp_rate": 2400000,
+          "start_freq": 441225000,
+          "start_mod": "dstar"
+        },
+        "ysf_seattle": {
+          "name": "YSF/Fusion Seattle (442-444 MHz)",
+          "center_freq": 443000000,
+          "samp_rate": 2400000,
+          "start_freq": 442650000,
+          "start_mod": "ysf"
+        },
+        "kcers_1": {
+          "name": "KCERS P25 Police/Fire (851-853 MHz)",
+          "center_freq": 852000000,
+          "samp_rate": 2400000,
+          "start_freq": 851012500,
+          "start_mod": "nfm"
+        },
+        "kcers_2": {
+          "name": "KCERS P25 Voice (853-855 MHz)",
+          "center_freq": 854000000,
+          "samp_rate": 2400000,
+          "start_freq": 853250000,
+          "start_mod": "nfm"
+        },
+        "kcers_3": {
+          "name": "KCERS P25 Voice (855-858 MHz)",
+          "center_freq": 856200000,
+          "samp_rate": 2400000,
+          "start_freq": 855212500,
+          "start_mod": "nfm"
+        },
+        "kcers_4": {
+          "name": "KCERS P25 Voice (857-859 MHz)",
+          "center_freq": 858000000,
+          "samp_rate": 2400000,
+          "start_freq": 857212500,
+          "start_mod": "nfm"
+        },
+        "flex_pager": {
+          "name": "FLEX Pagers (929-932 MHz)",
+          "center_freq": 930800000,
+          "samp_rate": 2400000,
+          "start_freq": 929612500,
+          "start_mod": "nfm"
+        },
+        "smart_meter": {
+          "name": "Smart Meters/LoRa (902-916 MHz)",
+          "center_freq": 909000000,
+          "samp_rate": 2400000,
+          "start_freq": 902000000,
+          "start_mod": "nfm"
+        },
+        "lte_700": {
+          "name": "LTE Band 12/13 (728-748 MHz)",
+          "center_freq": 738000000,
+          "samp_rate": 2400000,
+          "start_freq": 729000000,
+          "start_mod": "am"
+        },
+        "cellular_850": {
+          "name": "Cellular 850 (869-894 MHz)",
+          "center_freq": 880000000,
+          "samp_rate": 2400000,
+          "start_freq": 869000000,
+          "start_mod": "am"
+        },
+        "wmts_medical": {
+          "name": "Medical Telemetry WMTS (608-614 MHz)",
+          "center_freq": 611000000,
+          "samp_rate": 2400000,
+          "start_freq": 608000000,
+          "start_mod": "nfm"
+        },
+        "firstnet": {
+          "name": "FirstNet Band 14 (758-768 MHz)",
+          "center_freq": 763000000,
+          "samp_rate": 2400000,
+          "start_freq": 758000000,
+          "start_mod": "am"
+        },
+        "tacan_1030": {
+          "name": "Military TACAN/IFF (1030 MHz)",
+          "center_freq": 1030000000,
+          "samp_rate": 2400000,
+          "start_freq": 1030000000,
+          "start_mod": "am"
+        },
+        "adsb": {
+          "name": "ADS-B Aircraft (1090 MHz)",
+          "center_freq": 1090000000,
+          "samp_rate": 2400000,
+          "start_freq": 1090000000,
+          "start_mod": "adsb"
+        },
+        "uat": {
+          "name": "UAT ADS-B GA (978 MHz)",
+          "center_freq": 978000000,
+          "samp_rate": 2400000,
+          "start_freq": 978000000,
+          "start_mod": "uat"
+        },
+        "broadcast_aux": {
+          "name": "Broadcast Auxiliary (450-456 MHz)",
+          "center_freq": 453000000,
+          "samp_rate": 2400000,
+          "start_freq": 450050000,
+          "start_mod": "nfm"
+        },
+        "radiosonde2": {
+          "name": "Radiosondes 2 (399-402 MHz)",
+          "center_freq": 400500000,
+          "samp_rate": 2400000,
+          "start_freq": 400000000,
+          "start_mod": "sonde-rs41"
+        },
+        "radiosonde3": {
+          "name": "Radiosondes 3 (403-406 MHz)",
+          "center_freq": 404500000,
+          "samp_rate": 2400000,
+          "start_freq": 404000000,
+          "start_mod": "sonde-rs41"
+        },
+        "seventy_cm_446": {
+          "name": "70cm Simplex/DMR (445-448 MHz)",
+          "center_freq": 446500000,
+          "samp_rate": 2400000,
+          "start_freq": 446000000,
+          "start_mod": "nfm"
+        },
+        "broadcast_aux_low": {
+          "name": "Broadcast Auxiliary Low (449-452 MHz)",
+          "center_freq": 450500000,
+          "samp_rate": 2400000,
+          "start_freq": 450050000,
+          "start_mod": "nfm"
+        },
+        "broadcast_aux_high": {
+          "name": "Broadcast Auxiliary High (454-456 MHz)",
+          "center_freq": 455200000,
+          "samp_rate": 2400000,
+          "start_freq": 455050000,
+          "start_mod": "nfm"
+        },
+        "wmts_608": {
+          "name": "WMTS Medical (607-610 MHz)",
+          "center_freq": 608500000,
+          "samp_rate": 2400000,
+          "start_freq": 608000000,
+          "start_mod": "nfm"
+        },
+        "wmts_614": {
+          "name": "WMTS Medical (613-616 MHz)",
+          "center_freq": 614500000,
+          "samp_rate": 2400000,
+          "start_freq": 614000000,
+          "start_mod": "nfm"
+        },
+        "lte_700_low": {
+          "name": "LTE Band 12 (728-731 MHz)",
+          "center_freq": 729500000,
+          "samp_rate": 2400000,
+          "start_freq": 729000000,
+          "start_mod": "am"
+        },
+        "lte_700_mid": {
+          "name": "LTE Band 13 (747-750 MHz)",
+          "center_freq": 748500000,
+          "samp_rate": 2400000,
+          "start_freq": 748000000,
+          "start_mod": "am"
+        },
+        "firstnet_low": {
+          "name": "FirstNet Band 14 Low (757-760 MHz)",
+          "center_freq": 758500000,
+          "samp_rate": 2400000,
+          "start_freq": 758000000,
+          "start_mod": "am"
+        },
+        "firstnet_high": {
+          "name": "FirstNet Band 14 High (767-770 MHz)",
+          "center_freq": 768500000,
+          "samp_rate": 2400000,
+          "start_freq": 768000000,
+          "start_mod": "am"
+        },
+        "cellular_869": {
+          "name": "LTE Band 5 / Cellular (868-871 MHz)",
+          "center_freq": 869500000,
+          "samp_rate": 2400000,
+          "start_freq": 869000000,
+          "start_mod": "am"
+        },
+        "ism_902": {
+          "name": "Smart Meter/LoRa (901-904 MHz)",
+          "center_freq": 902500000,
+          "samp_rate": 2400000,
+          "start_freq": 902000000,
+          "start_mod": "ism"
+        },
+        "ism_915": {
+          "name": "LoRa ISM (914-917 MHz)",
+          "center_freq": 915500000,
+          "samp_rate": 2400000,
+          "start_freq": 915000000,
+          "start_mod": "ism"
+        }
+      }
+    },
+    "sdrplay-rsp1b": {
+      "name": "SDRplay RSP1B (1kHz-2GHz)",
+      "type": "sdrplay",
+      "profiles": {
+        "sw_49m": {
+          "name": "SW 49m Band (5.9-6.2 MHz)",
+          "center_freq": 6050000,
+          "samp_rate": 2000000,
+          "start_freq": 6000000,
+          "start_mod": "am"
+        },
+        "sw_41m": {
+          "name": "SW 41m Band (7.2-7.5 MHz)",
+          "center_freq": 7350000,
+          "samp_rate": 2000000,
+          "start_freq": 7200000,
+          "start_mod": "am"
+        },
+        "sw_31m": {
+          "name": "SW 31m Band (9.4-9.9 MHz)",
+          "center_freq": 9650000,
+          "samp_rate": 2000000,
+          "start_freq": 9500000,
+          "start_mod": "am"
+        },
+        "sw_25m": {
+          "name": "SW 25m Band (11.6-12.1 MHz)",
+          "center_freq": 11850000,
+          "samp_rate": 2000000,
+          "start_freq": 11700000,
+          "start_mod": "am"
+        },
+        "sw_22m": {
+          "name": "SW 22m Band (13.5-13.9 MHz)",
+          "center_freq": 13700000,
+          "samp_rate": 2000000,
+          "start_freq": 13570000,
+          "start_mod": "am"
+        },
+        "sw_19m": {
+          "name": "SW 19m Band (15.1-15.8 MHz)",
+          "center_freq": 15450000,
+          "samp_rate": 2000000,
+          "start_freq": 15100000,
+          "start_mod": "am"
+        },
+        "sw_16m": {
+          "name": "SW 16m Band (17.4-17.9 MHz)",
+          "center_freq": 17650000,
+          "samp_rate": 2000000,
+          "start_freq": 17500000,
+          "start_mod": "am"
+        },
+        "sw_13m": {
+          "name": "SW 13m Band (21.4-21.9 MHz)",
+          "center_freq": 21650000,
+          "samp_rate": 2000000,
+          "start_freq": 21500000,
+          "start_mod": "am"
+        },
+        "sw_11m": {
+          "name": "SW 11m / CB (25.6-28 MHz)",
+          "center_freq": 26800000,
+          "samp_rate": 2000000,
+          "start_freq": 27185000,
+          "start_mod": "am"
+        },
+        "ham_80m": {
+          "name": "80m Amateur (3.5-4.0 MHz)",
+          "center_freq": 3750000,
+          "samp_rate": 2000000,
+          "start_freq": 3845000,
+          "start_mod": "lsb"
+        },
+        "ham_40m": {
+          "name": "40m Amateur (7.0-7.3 MHz)",
+          "center_freq": 7150000,
+          "samp_rate": 2000000,
+          "start_freq": 7074000,
+          "start_mod": "usb"
+        },
+        "ham_20m": {
+          "name": "20m Amateur (14.0-14.35 MHz)",
+          "center_freq": 14175000,
+          "samp_rate": 2000000,
+          "start_freq": 14074000,
+          "start_mod": "usb"
+        },
+        "ham_17m": {
+          "name": "17m Amateur (18.068-18.168 MHz)",
+          "center_freq": 18118000,
+          "samp_rate": 2000000,
+          "start_freq": 18100000,
+          "start_mod": "usb"
+        },
+        "ham_15m": {
+          "name": "15m Amateur (21.0-21.45 MHz)",
+          "center_freq": 21225000,
+          "samp_rate": 2000000,
+          "start_freq": 21074000,
+          "start_mod": "usb"
+        },
+        "ham_12m": {
+          "name": "12m Amateur (24.89-24.99 MHz)",
+          "center_freq": 24940000,
+          "samp_rate": 2000000,
+          "start_freq": 24915000,
+          "start_mod": "usb"
+        },
+        "ham_10m": {
+          "name": "10m Amateur (28.0-29.7 MHz)",
+          "center_freq": 28500000,
+          "samp_rate": 2000000,
+          "start_freq": 28074000,
+          "start_mod": "usb"
+        },
+        "ft8_20m": {
+          "name": "FT8 20m (14.074 MHz)",
+          "center_freq": 14074000,
+          "samp_rate": 2000000,
+          "start_freq": 14074000,
+          "start_mod": "usb"
+        },
+        "ft8_40m": {
+          "name": "FT8 40m (7.074 MHz)",
+          "center_freq": 7074000,
+          "samp_rate": 2000000,
+          "start_freq": 7074000,
+          "start_mod": "usb"
+        },
+        "ft8_15m": {
+          "name": "FT8 15m (21.074 MHz)",
+          "center_freq": 21074000,
+          "samp_rate": 2000000,
+          "start_freq": 21074000,
+          "start_mod": "usb"
+        },
+        "sstv_20m": {
+          "name": "SSTV 20m (14.230 MHz)",
+          "center_freq": 14230000,
+          "samp_rate": 2000000,
+          "start_freq": 14230000,
+          "start_mod": "usb"
+        },
+        "wfax_nmc": {
+          "name": "Weather Fax NMC Pt Reyes (8.680 MHz)",
+          "center_freq": 8680000,
+          "samp_rate": 2000000,
+          "start_freq": 8680100,
+          "start_mod": "usb"
+        },
+        "wfax_noj": {
+          "name": "Weather Fax NOJ Kodiak (8.457 MHz)",
+          "center_freq": 8457000,
+          "samp_rate": 2000000,
+          "start_freq": 8457100,
+          "start_mod": "usb"
+        },
+        "hfgcs": {
+          "name": "USAF HFGCS (8.992/11.175 MHz)",
+          "center_freq": 10000000,
+          "samp_rate": 8000000,
+          "start_freq": 8992000,
+          "start_mod": "usb"
+        },
+        "mw_am": {
+          "name": "AM Broadcast MW (540-1700 kHz)",
+          "center_freq": 1100000,
+          "samp_rate": 2000000,
+          "start_freq": 1000000,
+          "start_mod": "am"
+        },
+        "mw_am_low": {
+          "name": "AM Broadcast Low (530-800 kHz)",
+          "center_freq": 665000,
+          "samp_rate": 2000000,
+          "start_freq": 570000,
+          "start_mod": "am"
+        },
+        "mw_am_high": {
+          "name": "AM Broadcast High (1200-1700 kHz)",
+          "center_freq": 1450000,
+          "samp_rate": 2000000,
+          "start_freq": 1300000,
+          "start_mod": "am"
+        },
+        "ndb": {
+          "name": "NDB Navigation Beacons (190-535 kHz)",
+          "center_freq": 360000,
+          "samp_rate": 2000000,
+          "start_freq": 350000,
+          "start_mod": "am"
+        },
+        "lwbc": {
+          "name": "Longwave Broadcast (150-280 kHz)",
+          "center_freq": 215000,
+          "samp_rate": 2000000,
+          "start_freq": 198000,
+          "start_mod": "am"
+        },
+        "vlf": {
+          "name": "VLF Naval/Time Signals (10-30 kHz)",
+          "center_freq": 20000,
+          "samp_rate": 2000000,
+          "start_freq": 24000,
+          "start_mod": "usb"
+        },
+        "wwv_10": {
+          "name": "WWV Time Signal 10 MHz",
+          "center_freq": 10000000,
+          "samp_rate": 2000000,
+          "start_freq": 10000000,
+          "start_mod": "am"
+        },
+        "wwv_15": {
+          "name": "WWV Time Signal 15 MHz",
+          "center_freq": 15000000,
+          "samp_rate": 2000000,
+          "start_freq": 15000000,
+          "start_mod": "am"
+        },
+        "wwv_5": {
+          "name": "WWV Time Signal 5 MHz",
+          "center_freq": 5000000,
+          "samp_rate": 2000000,
+          "start_freq": 5000000,
+          "start_mod": "am"
+        },
+        "wide_hf": {
+          "name": "Wide HF View (4-12 MHz)",
+          "center_freq": 8000000,
+          "samp_rate": 8000000,
+          "start_freq": 7074000,
+          "start_mod": "usb"
+        },
+        "wide_mw": {
+          "name": "Wide MW View (0.5-2.5 MHz)",
+          "center_freq": 1500000,
+          "samp_rate": 2000000,
+          "start_freq": 1000000,
+          "start_mod": "am"
+        },
+        "cb_radio": {
+          "name": "CB Radio (26.9-27.4 MHz)",
+          "center_freq": 27185000,
+          "samp_rate": 2000000,
+          "start_freq": 27185000,
+          "start_mod": "am"
+        },
+        "rc_control": {
+          "name": "RC Control (71-76 MHz)",
+          "center_freq": 73500000,
+          "samp_rate": 2000000,
+          "start_freq": 72000000,
+          "start_mod": "nfm"
+        },
+        "cordless_phone": {
+          "name": "Cordless Phone (46-48 MHz)",
+          "center_freq": 47000000,
+          "samp_rate": 2000000,
+          "start_freq": 46610000,
+          "start_mod": "nfm"
+        },
+        "ham_160m": {
+          "name": "160m Amateur (1.8-2.0 MHz)",
+          "center_freq": 1900000,
+          "samp_rate": 2000000,
+          "start_freq": 1840000,
+          "start_mod": "lsb"
+        },
+        "ham_60m": {
+          "name": "60m Amateur (5.3-5.4 MHz)",
+          "center_freq": 5350000,
+          "samp_rate": 2000000,
+          "start_freq": 5332000,
+          "start_mod": "usb"
+        },
+        "ft8_10m": {
+          "name": "FT8 10m (28.074 MHz)",
+          "center_freq": 28074000,
+          "samp_rate": 2000000,
+          "start_freq": 28074000,
+          "start_mod": "usb"
+        },
+        "ft8_17m": {
+          "name": "FT8 17m (18.100 MHz)",
+          "center_freq": 18100000,
+          "samp_rate": 2000000,
+          "start_freq": 18100000,
+          "start_mod": "usb"
+        },
+        "ft8_80m": {
+          "name": "FT8 80m (3.573 MHz)",
+          "center_freq": 3573000,
+          "samp_rate": 2000000,
+          "start_freq": 3573000,
+          "start_mod": "usb"
+        },
+        "sstv_40m": {
+          "name": "SSTV 40m (7.171 MHz)",
+          "center_freq": 7171000,
+          "samp_rate": 2000000,
+          "start_freq": 7171000,
+          "start_mod": "lsb"
+        },
+        "sstv_80m": {
+          "name": "SSTV 80m (3.845 MHz)",
+          "center_freq": 3845000,
+          "samp_rate": 2000000,
+          "start_freq": 3845000,
+          "start_mod": "lsb"
+        },
+        "wfax_nmc_4": {
+          "name": "Weather Fax NMC 4.344 MHz",
+          "center_freq": 4344000,
+          "samp_rate": 2000000,
+          "start_freq": 4344100,
+          "start_mod": "usb"
+        },
+        "wfax_nmc_12": {
+          "name": "Weather Fax NMC 12.784 MHz",
+          "center_freq": 12784000,
+          "samp_rate": 2000000,
+          "start_freq": 12784100,
+          "start_mod": "usb"
+        },
+        "wfax_noj_4": {
+          "name": "Weather Fax Kodiak 4.296 MHz",
+          "center_freq": 4296000,
+          "samp_rate": 2000000,
+          "start_freq": 4296100,
+          "start_mod": "usb"
+        },
+        "hfgcs_4": {
+          "name": "USAF HFGCS 4.724 MHz",
+          "center_freq": 4724000,
+          "samp_rate": 2000000,
+          "start_freq": 4724000,
+          "start_mod": "usb"
+        },
+        "hfgcs_8": {
+          "name": "USAF HFGCS 8.992 MHz",
+          "center_freq": 8992000,
+          "samp_rate": 2000000,
+          "start_freq": 8992000,
+          "start_mod": "usb"
+        },
+        "hfgcs_11": {
+          "name": "USAF HFGCS 11.175 MHz",
+          "center_freq": 11175000,
+          "samp_rate": 2000000,
+          "start_freq": 11175000,
+          "start_mod": "usb"
+        },
+        "hfgcs_15": {
+          "name": "USAF HFGCS 15.016 MHz",
+          "center_freq": 15016000,
+          "samp_rate": 2000000,
+          "start_freq": 15016000,
+          "start_mod": "usb"
+        },
+        "volmet_hf": {
+          "name": "VOLMET HF Aviation WX (various)",
+          "center_freq": 6604000,
+          "samp_rate": 2000000,
+          "start_freq": 6604000,
+          "start_mod": "usb"
+        },
+        "sw_tropical_60m": {
+          "name": "SW Tropical 60m (4.7-5.1 MHz)",
+          "center_freq": 4900000,
+          "samp_rate": 2000000,
+          "start_freq": 4750000,
+          "start_mod": "am"
+        },
+        "sw_tropical_90m": {
+          "name": "SW Tropical 90m (3.2-3.4 MHz)",
+          "center_freq": 3300000,
+          "samp_rate": 2000000,
+          "start_freq": 3200000,
+          "start_mod": "am"
+        },
+        "sw_tropical_120m": {
+          "name": "SW Tropical 120m (2.3-2.5 MHz)",
+          "center_freq": 2400000,
+          "samp_rate": 2000000,
+          "start_freq": 2300000,
+          "start_mod": "am"
+        },
+        "maritime_hf": {
+          "name": "Maritime HF Distress (2.182 MHz)",
+          "center_freq": 2182000,
+          "samp_rate": 2000000,
+          "start_freq": 2182000,
+          "start_mod": "usb"
+        },
+        "wide_sw_low": {
+          "name": "Wide SW View Low (2-10 MHz)",
+          "center_freq": 6000000,
+          "samp_rate": 8000000,
+          "start_freq": 5000000,
+          "start_mod": "am"
+        },
+        "wide_sw_high": {
+          "name": "Wide SW View High (10-18 MHz)",
+          "center_freq": 14000000,
+          "samp_rate": 8000000,
+          "start_freq": 14074000,
+          "start_mod": "usb"
+        },
+        "baby_monitor": {
+          "name": "Baby Monitor (49-51 MHz)",
+          "center_freq": 50000000,
+          "samp_rate": 2000000,
+          "start_freq": 49830000,
+          "start_mod": "nfm"
+        },
+        "am_530_730": {
+          "name": "AM: KVI 570/KJR 590/KIXI 630/KIRO 710",
+          "center_freq": 630000,
+          "samp_rate": 2000000,
+          "start_freq": 570000,
+          "start_mod": "am"
+        },
+        "am_770_950": {
+          "name": "AM: KTTH 770/KGNW 820/KHHO 850/KJR 950",
+          "center_freq": 860000,
+          "samp_rate": 2000000,
+          "start_freq": 770000,
+          "start_mod": "am"
+        },
+        "am_1000_1150": {
+          "name": "AM: KOMO 1000/KBLE 1050/KFNQ 1090/KKNW 1150",
+          "center_freq": 1075000,
+          "samp_rate": 2000000,
+          "start_freq": 1000000,
+          "start_mod": "am"
+        },
+        "am_1250_1490": {
+          "name": "AM: KKDZ 1250/KOL 1300/KKMO 1360/KRKO 1380/KBRO 1460/KARR 1490",
+          "center_freq": 1370000,
+          "samp_rate": 2000000,
+          "start_freq": 1250000,
+          "start_mod": "am"
+        },
+        "am_1540_1700": {
+          "name": "AM: KXPA 1540/KLFE 1590/KQMV 1620/KDRG 1680",
+          "center_freq": 1610000,
+          "samp_rate": 2000000,
+          "start_freq": 1540000,
+          "start_mod": "am"
+        }
+      }
+    }
+  },
+  "receiver_name": "Seattle DragonOS SDR",
+  "receiver_location": "Seattle, WA",
+  "receiver_asl": 30,
+  "receiver_gps": {
+    "lat": 47.5918,
+    "lon": -122.3107
+  },
+  "photo_title": "Seattle SDR Receiver",
+  "photo_desc": "Monitoring Seattle area RF from the Emerald City",
+  "version": 8,
+  "receiver_admin": "admin@localhost",
+  "bandplan_region": 2,
+  "receiver_country": "US",
+  "repeaterbook_api_key": "",
+  "report_radio": false,
+  "map_type": "google",
+  "gps_updates": false,
+  "max_clients": 20,
+  "max_clients_per_ip": 10,
+  "keep_files": 20,
+  "session_timeout": 0,
+  "usage_policy_url": "policy",
+  "bot_ban_enabled": false,
+  "allow_chat": true,
+  "allow_audio_recording": true,
+  "allow_center_freq_changes": false,
+  "magic_key": "memagic",
+  "receiver_keys": [],
+  "waterfall_scheme": "GoogleTurboWaterfall",
+  "fft_fps": 9,
+  "fft_size": 4096,
+  "fft_voverlap_factor": 0.3,
+  "waterfall_levels": {
+    "min": -88.0,
+    "max": -20.0
+  },
+  "waterfall_auto_levels": {
+    "min": 3.0,
+    "max": 10.0
+  },
+  "waterfall_auto_level_default_mode": false,
+  "waterfall_auto_min_range": 50,
+  "audio_compression": "adpcm",
+  "fft_compression": "adpcm",
+  "ui_theme": "default",
+  "tuning_precision": 2,
+  "eibi_bookmarks_range": 0,
+  "repeater_range": 0,
+  "google_maps_api_key": "",
+  "openweathermap_api_key": "",
+  "map_position_retention_time": 7200,
+  "map_call_retention_time": 300,
+  "map_max_calls": 5,
+  "map_ignore_indirect_reports": false,
+  "map_prefer_recent_reports": true,
+  "callsign_url": "https://www.qrzcq.com/call/{}",
+  "vessel_url": "https://www.vesselfinder.com/vessels/details/{}",
+  "flight_url": "https://flightaware.com/live/flight/{}",
+  "modes_url": "https://flightaware.com/live/modes/{}/redirect",
+  "sonde_url": "https://sondehub.org/{}",
+  "client_ban_time": 0
+}

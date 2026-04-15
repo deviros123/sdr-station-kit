@@ -1,0 +1,14 @@
+[Unit]
+Description=RTL-TCP for R820T SN:86215444 ADS-B (device 1)
+After=network.target
+
+[Service]
+Type=simple
+User=dragon
+ExecStartPre=/bin/sleep 8
+ExecStart=/usr/bin/rtl_tcp -d 1 -a 127.0.0.1 -p 1235 -s 2400000 -f 1090000000 -g 496
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

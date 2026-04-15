@@ -1,0 +1,14 @@
+[Unit]
+Description=RTL-TCP for E4000 SN:00000001 (device 0)
+After=network.target
+
+[Service]
+Type=simple
+User=dragon
+ExecStartPre=/bin/sleep 3
+ExecStart=/usr/bin/rtl_tcp -d 0 -a 127.0.0.1 -p 1234 -s 2400000 -f 125000000 -g 290
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

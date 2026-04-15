@@ -1,0 +1,16 @@
+[Unit]
+Description=SDRangel Post-Boot Configuration
+After=sdrangel-adsb.service sdrangel-marine.service sdrangel-aviation.service rtl-tcp-e4000.service
+Requires=sdrangel-adsb.service sdrangel-marine.service sdrangel-aviation.service rtl-tcp-e4000.service
+
+[Service]
+Type=oneshot
+User=dragon
+Group=dragon
+ExecStartPre=/bin/sleep 45
+ExecStart=/home/dragon/sdrangel-setup.sh
+RemainAfterExit=yes
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target
