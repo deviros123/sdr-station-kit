@@ -114,6 +114,7 @@ html += '<div class="tab" onclick="showTab(\'sitorb\',this)">SITOR-B</div>'
 html += '<div class="tab" onclick="showTab(\'dsc\',this)">DSC</div>'
 html += '<div class="tab" onclick="showTab(\'eas\',this)">EAS Alerts</div>'
 html += '<div class="tab" onclick="showTab(\'schedule\',this)">Schedule</div>'
+html += '<div class="tab" onclick="showTab(\'health\',this)">Station Health</div>'
 html += '</div>'
 
 # Fax panel
@@ -321,6 +322,88 @@ html += '<tr style="border-bottom:1px solid #0d1117"><td style="padding:3px;colo
 html += '</table></div>'
 
 html += '</div>'  # close schedule panel
+
+# Health panel
+html += '<div class="panel" id="panel-health">'
+html += '<h2>Station Health</h2>'
+
+status_file = "/home/dragon/station-status.json"
+try:
+    with open(status_file) as f:
+        status = json.load(f)
+
+    # Overall status banner
+    issues = status.get("issue_count", 0)
+    if issues == 0:
+        html += '<div style="background:#0d2818;border:1px solid #1a4d2e;border-radius:8px;padding:15px;text-align:center;margin:10px 0">'
+        html += '<div style="color:#3fb950;font-size:1.3em;font-weight:bold">All Systems Healthy</div>'
+        html += '<div style="color:#484f58;font-size:0.8em">Last check: %s</div>' % status.get("timestamp", "")
+        html += '</div>'
+    else:
+        html += '<div style="background:#2d1117;border:1px solid #6e2d2d;border-radius:8px;padding:15px;text-align:center;margin:10px 0">'
+        html += '<div style="color:#f85149;font-size:1.3em;font-weight:bold">%d Issue%s Detected</div>' % (issues, "s" if issues > 1 else "")
+        html += '<div style="color:#484f58;font-size:0.8em">Last check: %s</div>' % status.get("timestamp", "")
+        for issue in status.get("issues", []):
+            html += '<div style="color:#ffa657;margin-top:5px">%s</div>' % issue
+        html += '</div>'
+
+    # Hardware status
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:15px 0">'
+
+    owrx = status.get("openwebrx", "unknown")
+    owrx_color = "#3fb950" if owrx == "running" else ("#ffa657" if owrx == "capture-in-progress" else "#f85149")
+    html += '<div class="card" style="padding:12px;text-align:center"><div style="color:%s;font-size:1.2em;font-weight:bold">%s</div><div style="color:#484f58;font-size:0.75em">OpenWebRX+</div></div>' % (owrx_color, owrx.upper())
+
+    rtl = status.get("rtlsdr_count", 0)
+    rtl_color = "#3fb950" if rtl >= 2 else ("#ffa657" if rtl == 1 else "#f85149")
+    html += '<div class="card" style="padding:12px;text-align:center"><div style="color:%s;font-size:1.2em;font-weight:bold">%d / 2</div><div style="color:#484f58;font-size:0.75em">RTL-SDR Dongles</div></div>' % (rtl_color, rtl)
+
+    rsp = status.get("rsp1b_present", False)
+    rsp_color = "#3fb950" if rsp else "#f85149"
+    html += '<div class="card" style="padding:12px;text-align:center"><div style="color:%s;font-size:1.2em;font-weight:bold">%s</div><div style="color:#484f58;font-size:0.75em">SDRplay RSP1B</div></div>' % (rsp_color, "ONLINE" if rsp else "OFFLINE")
+
+    disk = status.get("disk_percent", 0)
+    disk_color = "#3fb950" if disk < 70 else ("#ffa657" if disk < 85 else "#f85149")
+    html += '<div class="card" style="padding:12px;text-align:center"><div style="color:%s;font-size:1.2em;font-weight:bold">%d%%</div><div style="color:#484f58;font-size:0.75em">Disk Usage</div></div>' % (disk_color, disk)
+
+    mem = status.get("memory_avail_mb", 0)
+    mem_color = "#3fb950" if mem > 2000 else ("#ffa657" if mem > 500 else "#f85149")
+    html += '<div class="card" style="padding:12px;text-align:center"><div style="color:%s;font-size:1.2em;font-weight:bold">%d MB</div><div style="color:#484f58;font-size:0.75em">Memory Available</div></div>' % (mem_color, mem)
+
+    cpu = status.get("cpu_temp_c", "N/A")
+    if cpu != "N/A":
+        cpu_int = int(cpu)
+        cpu_color = "#3fb950" if cpu_int < 60 else ("#ffa657" if cpu_int < 75 else "#f85149")
+        html += '<div class="card" style="padding:12px;text-align:center"><div style="color:%s;font-size:1.2em;font-weight:bold">%s C</div><div style="color:#484f58;font-size:0.75em">CPU Temp</div></div>' % (cpu_color, cpu)
+
+    html += '</div>'
+
+    # Recent log
+    html += '<h2 style="margin-top:15px">Watchdog Log</h2>'
+    try:
+        with open("/home/dragon/watchdog.log") as f:
+            log_lines = f.readlines()[-30:]
+        html += '<div class="text-log">'
+        for line in reversed(log_lines):
+            line = line.strip()
+            if not line:
+                continue
+            cls = ""
+            if "ISSUES" in line or "FAIL" in line or "RESTART" in line:
+                cls = ' style="color:#ffa657"'
+            elif "OK:" in line:
+                cls = ' style="color:#3fb950"'
+            elif "FIX:" in line or "CLEANUP:" in line:
+                cls = ' style="color:#58a6ff"'
+            html += '<div class="text-entry"%s>%s</div>' % (cls, line)
+        html += '</div>'
+    except:
+        html += '<div class="empty">No watchdog log yet. First check will run within 5 minutes.</div>'
+
+except Exception as e:
+    html += '<div class="empty">Station health data not available yet. Watchdog will start collecting data shortly.</div>'
+
+html += '</div>'  # close health panel
 
 # JavaScript
 html += """
