@@ -1,0 +1,56 @@
+# ============================================
+# SDR Station Capture Schedule - KiwiSDR Version
+# All captures use KiwiSDR (zero OpenWebRX downtime!)
+# Freq in kHz (not Hz) for KiwiSDR
+# ============================================
+
+# --- WEATHER FAX - NMC Point Reyes ---
+43 1 * * * /home/dragon/kiwi-fax-capture.sh 4346 ptreyes_satellite 660
+30 2 * * * /home/dragon/kiwi-fax-capture.sh 4346 ptreyes_500mb_00z 600
+0 3 * * * /home/dragon/kiwi-fax-capture.sh 4346 ptreyes_sea_state_00z 600
+31 3 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_surface_00z 720
+20 8 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_24hr_wind_wave 600
+0 9 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_48hr_surface 600
+31 9 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_surface_06z 720
+20 14 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_satellite_12z 660
+45 14 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_500mb_12z 600
+5 15 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_surface_12z 720
+22 18 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_24hr_wind_wave_12z 600
+45 18 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_sst 660
+40 20 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_48hr_surface_12z 600
+24 21 * * * /home/dragon/kiwi-fax-capture.sh 8682 ptreyes_surface_18z 720
+
+# --- WEATHER FAX - NOJ Kodiak ---
+0 2 * * * /home/dragon/kiwi-fax-capture.sh 4296 kodiak_surface_00z 720
+0 5 * * * /home/dragon/kiwi-fax-capture.sh 8457 kodiak_sea_ice 600
+20 5 * * * /home/dragon/kiwi-fax-capture.sh 8457 kodiak_24hr_surface 600
+0 8 * * * /home/dragon/kiwi-fax-capture.sh 8457 kodiak_48hr_surface 600
+0 14 * * * /home/dragon/kiwi-fax-capture.sh 8457 kodiak_surface_12z 720
+30 17 * * * /home/dragon/kiwi-fax-capture.sh 8457 kodiak_satellite 660
+0 20 * * * /home/dragon/kiwi-fax-capture.sh 8457 kodiak_wind_wave 600
+
+# --- WEATHER FAX - JMH Tokyo (bonus, strong signal) ---
+0 0 * * * /home/dragon/kiwi-fax-capture.sh 7793 jmh_tokyo_chart 720
+0 6 * * * /home/dragon/kiwi-fax-capture.sh 7793 jmh_tokyo_chart_06z 720
+0 12 * * * /home/dragon/kiwi-fax-capture.sh 13988 jmh_tokyo_chart_12z 720
+0 18 * * * /home/dragon/kiwi-fax-capture.sh 7793 jmh_tokyo_chart_18z 720
+
+# --- NAVTEX (518 kHz, every 4 hours) ---
+0 0 * * * /home/dragon/kiwi-navtex-monitor.sh 600
+10 4 * * * /home/dragon/kiwi-navtex-monitor.sh 600
+40 8 * * * /home/dragon/kiwi-navtex-monitor.sh 600
+10 12 * * * /home/dragon/kiwi-navtex-monitor.sh 600
+10 16 * * * /home/dragon/kiwi-navtex-monitor.sh 600
+20 20 * * * /home/dragon/kiwi-navtex-monitor.sh 600
+
+# --- EAS Alerts (RTL-SDR, unchanged) ---
+5,35 * * * * /home/dragon/weather-monitor.sh eas 162550000 120
+
+# --- Dashboard regeneration ---
+*/15 * * * * /home/dragon/weather-dashboard.py 2>/dev/null
+
+# --- Watchdog ---
+*/5 * * * * /home/dragon/sdr-watchdog.sh
+
+# --- Weekly full-band scan (Saturday 23:00 UTC) ---
+0 23 * * 6 /home/dragon/sdr-weekly-scan.sh
