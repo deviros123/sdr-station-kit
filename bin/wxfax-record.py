@@ -8,17 +8,18 @@ import struct
 
 def record_fax(freq_hz, duration_sec, outfile):
     """Record and USB-demodulate a radiofax signal."""
-    SAMP_RATE = 48000
+    SAMP_RATE = 250000  # RSP1B minimum ~62500, use 250k for good fax quality
     # Radiofax uses USB, tune 1.9 kHz below assigned freq
     tune_freq = freq_hz - 1900
 
     print("Recording: freq=%d Hz, tune=%d Hz, duration=%ds" % (freq_hz, tune_freq, duration_sec))
 
     # Open SDRplay RSP1B
-    args = dict(driver="sdrplay")
+    args = SoapySDR.KwargsFromString("driver=sdrplay")
     sdr = SoapySDR.Device(args)
     sdr.setSampleRate(SoapySDR.SOAPY_SDR_RX, 0, SAMP_RATE)
     sdr.setFrequency(SoapySDR.SOAPY_SDR_RX, 0, tune_freq)
+    sdr.setGainMode(SoapySDR.SOAPY_SDR_RX, 0, False)  # Disable AGC
     sdr.setGain(SoapySDR.SOAPY_SDR_RX, 0, 40)
 
     # Setup stream
@@ -48,15 +49,28 @@ def record_fax(freq_hz, duration_sec, outfile):
     sdr.deactivateStream(rxStream)
     sdr.closeStream(rxStream)
 
-    print("Collected %d samples, writing WAV..." % len(audio_samples))
+    print("Collected %d samples at %d Hz, downsampling to 11025 Hz..." % (len(audio_samples), SAMP_RATE))
+
+    # Downsample to 11025 Hz for fax decoder
+    OUT_RATE = 11025
+    audio_np = np.array(audio_samples, dtype=np.float32)
+    # Simple decimation
+    ratio = SAMP_RATE / OUT_RATE
+    indices = np.arange(0, len(audio_np), ratio).astype(int)
+    indices = indices[indices < len(audio_np)]
+    downsampled = audio_np[indices]
+    # Normalize
+    peak = np.max(np.abs(downsampled))
+    if peak > 0:
+        downsampled = downsampled / peak
 
     # Write WAV
     with wave.open(outfile, 'w') as wf:
         wf.setnchannels(1)
         wf.setsampwidth(2)
-        wf.setframerate(SAMP_RATE)
-        for s in audio_samples:
-            wf.writeframes(struct.pack('<h', int(max(-1, min(1, s)) * 32767)))
+        wf.setframerate(OUT_RATE)
+        for s in downsampled:
+            wf.writeframes(struct.pack('<h', int(max(-1, min(1, float(s))) * 32767)))
 
     print("Saved: %s" % outfile)
 
