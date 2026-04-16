@@ -151,146 +151,147 @@ p{color:#8b949e;font-size:0.85em;line-height:1.6;margin:8px 0}
 <!-- SYSTEM DIAGRAM -->
 <h2 id="diagram">System Diagram</h2>
 <div class="diagram-container">
-<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:1000px;margin:0 auto;display:block">
-<!-- Background -->
-<rect width="1000" height="700" fill="#0d1117"/>
+<svg viewBox="0 0 960 780" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:960px;margin:0 auto;display:block">
+<rect width="960" height="780" fill="#0d1117"/>
+<text x="480" y="25" fill="#58a6ff" font-size="15" text-anchor="middle" font-weight="bold">SDR Station Architecture</text>
 
-<!-- Title -->
-<text x="500" y="30" fill="#58a6ff" font-size="16" text-anchor="middle" font-weight="bold">SDR Station Architecture</text>
+<!-- ===== ROW 1: ANTENNAS ===== -->
+<text x="420" y="55" fill="#f0883e" font-size="11" text-anchor="middle" font-weight="bold">ANTENNAS (Attic)</text>
 
-<!-- ANTENNAS (top) -->
-<text x="160" y="60" fill="#f0883e" font-size="11" text-anchor="middle" font-weight="bold">ANTENNAS (Attic)</text>
+<rect x="55" y="70" width="130" height="50" rx="8" fill="#1a3a1a" stroke="#3fb950" stroke-width="2"/>
+<text x="120" y="90" fill="#3fb950" font-size="10" text-anchor="middle" font-weight="bold">MLA-30+</text>
+<text x="120" y="103" fill="#8b949e" font-size="8" text-anchor="middle">Active Loop 0.5-30 MHz</text>
 
-<!-- MLA-30+ -->
-<rect x="30" y="75" width="120" height="55" rx="8" fill="#1a3a1a" stroke="#3fb950" stroke-width="2"/>
-<text x="90" y="95" fill="#3fb950" font-size="10" text-anchor="middle" font-weight="bold">MLA-30+</text>
-<text x="90" y="108" fill="#8b949e" font-size="8" text-anchor="middle">Active Loop</text>
-<text x="90" y="120" fill="#8b949e" font-size="8" text-anchor="middle">0.5-30 MHz</text>
+<rect x="350" y="70" width="130" height="50" rx="8" fill="#1a2a3a" stroke="#ff9800" stroke-width="2"/>
+<text x="415" y="90" fill="#ff9800" font-size="10" text-anchor="middle" font-weight="bold">Tram 1410 Discone</text>
+<text x="415" y="103" fill="#8b949e" font-size="8" text-anchor="middle">25-1300 MHz</text>
 
-<!-- Tram 1410 -->
-<rect x="170" y="75" width="120" height="55" rx="8" fill="#1a2a3a" stroke="#58a6ff" stroke-width="2"/>
-<text x="230" y="95" fill="#58a6ff" font-size="10" text-anchor="middle" font-weight="bold">Tram 1410</text>
-<text x="230" y="108" fill="#8b949e" font-size="8" text-anchor="middle">Discone</text>
-<text x="230" y="120" fill="#8b949e" font-size="8" text-anchor="middle">25-1300 MHz</text>
-
-<!-- Rooftop -->
-<rect x="310" y="75" width="120" height="55" rx="8" fill="#2a1a3a" stroke="#a371f7" stroke-width="2"/>
-<text x="370" y="95" fill="#a371f7" font-size="10" text-anchor="middle" font-weight="bold">Rooftop Antenna</text>
-<text x="370" y="108" fill="#8b949e" font-size="8" text-anchor="middle">AM/FM/VHF/UHF</text>
-<text x="370" y="120" fill="#8b949e" font-size="8" text-anchor="middle">Broadband</text>
+<rect x="635" y="70" width="130" height="50" rx="8" fill="#2a1a3a" stroke="#2196f3" stroke-width="2"/>
+<text x="700" y="90" fill="#2196f3" font-size="10" text-anchor="middle" font-weight="bold">Rooftop Antenna</text>
+<text x="700" y="103" fill="#8b949e" font-size="8" text-anchor="middle">AM/FM/VHF/UHF</text>
 
 <!-- Splitter -->
-<rect x="55" y="155" width="70" height="30" rx="5" fill="#21262d" stroke="#484f58" stroke-width="1"/>
-<text x="90" y="174" fill="#c9d1d9" font-size="8" text-anchor="middle">BNC Splitter</text>
+<rect x="85" y="148" width="70" height="26" rx="5" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+<text x="120" y="165" fill="#c9d1d9" font-size="8" text-anchor="middle">BNC Splitter</text>
+<line x1="120" y1="120" x2="120" y2="148" stroke="#3fb950" stroke-width="2"/>
 
-<!-- Antenna cables -->
-<line x1="90" y1="130" x2="90" y2="155" stroke="#3fb950" stroke-width="2"/>
-<line x1="230" y1="130" x2="230" y2="250" stroke="#58a6ff" stroke-width="2"/>
-<line x1="370" y1="130" x2="370" y2="350" stroke="#a371f7" stroke-width="2"/>
+<!-- ===== ROW 2: SDR RECEIVERS (spaced apart) ===== -->
+<text x="420" y="208" fill="#f0883e" font-size="11" text-anchor="middle" font-weight="bold">SDR RECEIVERS</text>
 
-<!-- Splitter outputs -->
-<line x1="70" y1="185" x2="70" y2="250" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4,2"/>
-<line x1="110" y1="185" x2="110" y2="250" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4,2"/>
+<!-- KiwiSDR at x=55 -->
+<rect x="15" y="220" width="145" height="65" rx="8" fill="#2d1a0e" stroke="#f0883e" stroke-width="2"/>
+<text x="87" y="240" fill="#f0883e" font-size="10" text-anchor="middle" font-weight="bold">KiwiSDR 2</text>
+<text x="87" y="253" fill="#c9d1d9" font-size="8" text-anchor="middle">10 kHz - 30 MHz</text>
+<text x="87" y="265" fill="#8b949e" font-size="8" text-anchor="middle">32 MHz BW | 14-bit</text>
+<text x="87" y="277" fill="#3fb950" font-size="7" text-anchor="middle">Fax / NAVTEX / GPS</text>
 
-<!-- SDR DEVICES (middle) -->
-<text x="250" y="240" fill="#f0883e" font-size="11" text-anchor="middle" font-weight="bold">SDR RECEIVERS</text>
+<!-- RSP1B at x=230 (gap from KiwiSDR) -->
+<rect x="195" y="220" width="145" height="65" rx="8" fill="#1a0e2d" stroke="#9c27b0" stroke-width="2"/>
+<text x="267" y="240" fill="#9c27b0" font-size="10" text-anchor="middle" font-weight="bold">SDRplay RSP1B</text>
+<text x="267" y="253" fill="#c9d1d9" font-size="8" text-anchor="middle">1 kHz - 2 GHz</text>
+<text x="267" y="265" fill="#8b949e" font-size="8" text-anchor="middle">10 MHz BW | 14-bit</text>
+<text x="267" y="277" fill="#3fb950" font-size="7" text-anchor="middle">HF Browsing</text>
 
-<!-- KiwiSDR 2 -->
-<rect x="20" y="255" width="140" height="70" rx="8" fill="#2d1a0e" stroke="#f0883e" stroke-width="2"/>
-<text x="90" y="275" fill="#f0883e" font-size="11" text-anchor="middle" font-weight="bold">KiwiSDR 2</text>
-<text x="90" y="290" fill="#c9d1d9" font-size="8" text-anchor="middle">10 kHz - 30 MHz</text>
-<text x="90" y="302" fill="#8b949e" font-size="8" text-anchor="middle">32 MHz bandwidth</text>
-<text x="90" y="314" fill="#3fb950" font-size="7" text-anchor="middle">Fax / NAVTEX / GPS</text>
+<!-- E4000 at x=415 (clear gap from RSP1B) -->
+<rect x="380" y="220" width="145" height="65" rx="8" fill="#1a2a0e" stroke="#ff9800" stroke-width="2"/>
+<text x="452" y="240" fill="#ff9800" font-size="10" text-anchor="middle" font-weight="bold">E4000 RTL-SDR</text>
+<text x="452" y="253" fill="#c9d1d9" font-size="8" text-anchor="middle">52 - 2174 MHz</text>
+<text x="452" y="265" fill="#8b949e" font-size="8" text-anchor="middle">SMArt XTR v5</text>
+<text x="452" y="277" fill="#3fb950" font-size="7" text-anchor="middle">VHF/UHF/FM/Aviation</text>
 
-<!-- RSP1B -->
-<rect x="180" y="255" width="140" height="70" rx="8" fill="#1a0e2d" stroke="#9c27b0" stroke-width="2"/>
-<text x="250" y="275" fill="#9c27b0" font-size="11" text-anchor="middle" font-weight="bold">SDRplay RSP1B</text>
-<text x="250" y="290" fill="#c9d1d9" font-size="8" text-anchor="middle">1 kHz - 2 GHz</text>
-<text x="250" y="302" fill="#8b949e" font-size="8" text-anchor="middle">10 MHz bandwidth, 14-bit</text>
-<text x="250" y="314" fill="#3fb950" font-size="7" text-anchor="middle">HF Browsing</text>
+<!-- R820T at x=600 (clear gap from E4000) -->
+<rect x="565" y="220" width="145" height="65" rx="8" fill="#0e1a2d" stroke="#2196f3" stroke-width="2"/>
+<text x="637" y="240" fill="#2196f3" font-size="10" text-anchor="middle" font-weight="bold">R820T RTL-SDR</text>
+<text x="637" y="253" fill="#c9d1d9" font-size="8" text-anchor="middle">24 - 1766 MHz</text>
+<text x="637" y="265" fill="#8b949e" font-size="8" text-anchor="middle">NESDR SMArt v5</text>
+<text x="637" y="277" fill="#3fb950" font-size="7" text-anchor="middle">Marine/P25/ADS-B</text>
 
-<!-- E4000 -->
-<rect x="180" y="345" width="140" height="70" rx="8" fill="#1a2a0e" stroke="#ff9800" stroke-width="2"/>
-<text x="250" y="365" fill="#ff9800" font-size="11" text-anchor="middle" font-weight="bold">E4000 RTL-SDR</text>
-<text x="250" y="380" fill="#c9d1d9" font-size="8" text-anchor="middle">52 MHz - 2174 MHz</text>
-<text x="250" y="392" fill="#8b949e" font-size="8" text-anchor="middle">SMArt XTR v5</text>
-<text x="250" y="404" fill="#3fb950" font-size="7" text-anchor="middle">VHF/UHF/FM/Aviation</text>
+<!-- ===== ANTENNA TO SDR CONNECTIONS ===== -->
+<!-- Splitter left to KiwiSDR -->
+<line x1="100" y1="174" x2="87" y2="220" stroke="#3fb950" stroke-width="2"/>
+<text x="68" y="200" fill="#3fb950" font-size="7">RG-174</text>
+<!-- Splitter right to RSP1B -->
+<line x1="140" y1="174" x2="267" y2="220" stroke="#3fb950" stroke-width="2"/>
+<text x="180" y="192" fill="#3fb950" font-size="7">RG-174</text>
+<!-- MLA-30+ to splitter label -->
+<text x="130" y="138" fill="#3fb950" font-size="7">RG-174</text>
+<!-- Tram down to E4000 -->
+<line x1="415" y1="120" x2="452" y2="220" stroke="#ff9800" stroke-width="2"/>
+<text x="425" y="175" fill="#ff9800" font-size="7">RG-174</text>
+<!-- Rooftop down to R820T -->
+<line x1="700" y1="120" x2="637" y2="220" stroke="#2196f3" stroke-width="2"/>
+<text x="670" y="175" fill="#2196f3" font-size="7">RG-6</text>
 
-<!-- R820T -->
-<rect x="340" y="345" width="140" height="70" rx="8" fill="#0e1a2d" stroke="#2196f3" stroke-width="2"/>
-<text x="410" y="365" fill="#2196f3" font-size="11" text-anchor="middle" font-weight="bold">R820T RTL-SDR</text>
-<text x="410" y="380" fill="#c9d1d9" font-size="8" text-anchor="middle">24 MHz - 1766 MHz</text>
-<text x="410" y="392" fill="#8b949e" font-size="8" text-anchor="middle">NESDR SMArt v5</text>
-<text x="410" y="404" fill="#3fb950" font-size="7" text-anchor="middle">Marine/P25/ADS-B</text>
+<!-- ===== ROW 3: USB HUB (below SDRs) ===== -->
+<rect x="230" y="330" width="400" height="45" rx="8" fill="#21262d" stroke="#484f58" stroke-width="2"/>
+<text x="430" y="350" fill="#c9d1d9" font-size="10" text-anchor="middle" font-weight="bold">7-Port Powered USB Hub</text>
+<text x="430" y="365" fill="#8b949e" font-size="8" text-anchor="middle">USB 3.0 | External Power Supply</text>
 
-<!-- Antenna to E4000 -->
-<line x1="230" y1="250" x2="250" y2="345" stroke="#58a6ff" stroke-width="1.5"/>
-<!-- Antenna to R820T -->
-<line x1="370" y1="250" x2="410" y2="345" stroke="#a371f7" stroke-width="1.5"/>
+<!-- USB lines from SDRs down to hub -->
+<line x1="267" y1="285" x2="310" y2="330" stroke="#484f58" stroke-width="1.5" stroke-dasharray="3,2"/>
+<line x1="452" y1="285" x2="430" y2="330" stroke="#484f58" stroke-width="1.5" stroke-dasharray="3,2"/>
+<line x1="637" y1="285" x2="550" y2="330" stroke="#484f58" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="280" y="312" fill="#484f58" font-size="7">USB</text>
+<text x="445" y="312" fill="#484f58" font-size="7">USB</text>
+<text x="600" y="312" fill="#484f58" font-size="7">USB</text>
 
-<!-- INFRASTRUCTURE (bottom) -->
-<text x="700" y="240" fill="#f0883e" font-size="11" text-anchor="middle" font-weight="bold">INFRASTRUCTURE</text>
+<!-- ===== ROW 4: RASPBERRY PI ===== -->
+<rect x="320" y="420" width="220" height="70" rx="10" fill="#0d2818" stroke="#3fb950" stroke-width="2"/>
+<text x="430" y="445" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="bold">Raspberry Pi 5</text>
+<text x="430" y="460" fill="#c9d1d9" font-size="8" text-anchor="middle">8 GB RAM | DragonOS aarch64</text>
+<text x="430" y="473" fill="#8b949e" font-size="8" text-anchor="middle">OpenWebRX+ (Docker) | Automation | Watchdog</text>
+<text x="430" y="485" fill="#484f58" font-size="7" text-anchor="middle">172.31.255.48</text>
 
-<!-- 7-Port USB Hub -->
-<rect x="540" y="345" width="160" height="60" rx="8" fill="#21262d" stroke="#484f58" stroke-width="2"/>
-<text x="620" y="368" fill="#c9d1d9" font-size="10" text-anchor="middle" font-weight="bold">7-Port Powered USB Hub</text>
-<text x="620" y="383" fill="#8b949e" font-size="8" text-anchor="middle">USB 3.0 | External Power</text>
-<text x="620" y="395" fill="#484f58" font-size="7" text-anchor="middle">RSP1B + E4000 + R820T</text>
+<!-- USB hub down to Pi -->
+<line x1="430" y1="375" x2="430" y2="420" stroke="#3fb950" stroke-width="2"/>
+<text x="445" y="400" fill="#3fb950" font-size="7">USB 3.0</text>
 
-<!-- USB cables from hub to SDRs -->
-<line x1="540" y1="375" x2="320" y2="310" stroke="#484f58" stroke-width="1" stroke-dasharray="3,2"/>
-<text x="435" y="335" fill="#484f58" font-size="7" transform="rotate(-15, 435, 335)">USB</text>
-<line x1="540" y1="380" x2="320" y2="380" stroke="#484f58" stroke-width="1" stroke-dasharray="3,2"/>
-<text x="435" y="375" fill="#484f58" font-size="7">USB</text>
-<line x1="540" y1="385" x2="480" y2="385" stroke="#484f58" stroke-width="1" stroke-dasharray="3,2"/>
-<text x="505" y="395" fill="#484f58" font-size="7">USB</text>
+<!-- ===== ROW 5: SWITCH ===== -->
+<rect x="320" y="535" width="220" height="50" rx="8" fill="#1a1a2d" stroke="#58a6ff" stroke-width="2"/>
+<text x="430" y="555" fill="#58a6ff" font-size="10" text-anchor="middle" font-weight="bold">UniFi 8-Port PoE Switch</text>
+<text x="430" y="570" fill="#8b949e" font-size="8" text-anchor="middle">Gigabit Ethernet | PoE</text>
 
-<!-- Raspberry Pi 5 -->
-<rect x="540" y="450" width="200" height="80" rx="10" fill="#0d2818" stroke="#3fb950" stroke-width="2"/>
-<text x="640" y="475" fill="#3fb950" font-size="13" text-anchor="middle" font-weight="bold">Raspberry Pi 5</text>
-<text x="640" y="492" fill="#c9d1d9" font-size="9" text-anchor="middle">8 GB RAM | DragonOS</text>
-<text x="640" y="505" fill="#8b949e" font-size="8" text-anchor="middle">OpenWebRX+ (Docker)</text>
-<text x="640" y="518" fill="#8b949e" font-size="8" text-anchor="middle">Automation Scripts | Watchdog</text>
+<!-- Pi down to switch -->
+<line x1="430" y1="490" x2="430" y2="535" stroke="#58a6ff" stroke-width="2"/>
+<text x="445" y="515" fill="#58a6ff" font-size="7">Gigabit ETH</text>
 
-<!-- USB from Pi to Hub -->
-<line x1="620" y1="450" x2="620" y2="405" stroke="#3fb950" stroke-width="2"/>
-<text x="630" y="430" fill="#3fb950" font-size="7">USB 3.0</text>
+<!-- KiwiSDR Ethernet to switch -->
+<line x1="87" y1="285" x2="87" y2="555" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="4,2"/>
+<line x1="87" y1="555" x2="320" y2="555" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="200" y="550" fill="#f0883e" font-size="7">Ethernet</text>
 
-<!-- UniFi Switch -->
-<rect x="540" y="570" width="200" height="60" rx="8" fill="#1a1a2d" stroke="#58a6ff" stroke-width="2"/>
-<text x="640" y="593" fill="#58a6ff" font-size="11" text-anchor="middle" font-weight="bold">UniFi 8-Port PoE Switch</text>
-<text x="640" y="608" fill="#8b949e" font-size="8" text-anchor="middle">Gigabit Ethernet | PoE</text>
-<text x="640" y="620" fill="#484f58" font-size="7" text-anchor="middle">Pi + KiwiSDR + Home Network</text>
+<!-- Home Network -->
+<rect x="320" y="625" width="220" height="45" rx="8" fill="#21262d" stroke="#484f58" stroke-width="1"/>
+<text x="430" y="645" fill="#c9d1d9" font-size="10" text-anchor="middle" font-weight="bold">Home Network / Internet</text>
+<text x="430" y="660" fill="#8b949e" font-size="8" text-anchor="middle">Router | LAN | Web Access</text>
+<line x1="430" y1="585" x2="430" y2="625" stroke="#484f58" stroke-width="1.5"/>
 
-<!-- Ethernet from Pi to Switch -->
-<line x1="640" y1="530" x2="640" y2="570" stroke="#58a6ff" stroke-width="2"/>
-<text x="655" y="555" fill="#58a6ff" font-size="7">Gigabit ETH</text>
-
-<!-- Ethernet from KiwiSDR to Switch -->
-<line x1="90" y1="325" x2="90" y2="600" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="4,2"/>
-<line x1="90" y1="600" x2="540" y2="600" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="4,2"/>
-<text x="300" y="595" fill="#f0883e" font-size="7">Ethernet to Switch</text>
-
-<!-- Network / Internet -->
-<rect x="820" y="570" width="160" height="60" rx="8" fill="#21262d" stroke="#484f58" stroke-width="1"/>
-<text x="900" y="593" fill="#c9d1d9" font-size="10" text-anchor="middle" font-weight="bold">Home Network</text>
-<text x="900" y="608" fill="#8b949e" font-size="8" text-anchor="middle">Router / Internet</text>
-<text x="900" y="620" fill="#484f58" font-size="7" text-anchor="middle">Web access on LAN</text>
-<line x1="740" y1="600" x2="820" y2="600" stroke="#484f58" stroke-width="1.5"/>
-
-<!-- WEB SERVICES -->
-<rect x="800" y="440" width="180" height="100" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
-<text x="890" y="462" fill="#58a6ff" font-size="10" text-anchor="middle" font-weight="bold">Web Services</text>
-<text x="890" y="480" fill="#3fb950" font-size="8" text-anchor="middle">:8073 OpenWebRX+</text>
-<text x="890" y="494" fill="#3fb950" font-size="8" text-anchor="middle">:8073/static/* Bookmarks</text>
-<text x="890" y="508" fill="#3fb950" font-size="8" text-anchor="middle">:8073/static/weatherfax/*</text>
-<text x="890" y="522" fill="#f0883e" font-size="8" text-anchor="middle">:8074 KiwiSDR Web UI</text>
-
-<line x1="800" y1="490" x2="740" y2="490" stroke="#21262d" stroke-width="1" stroke-dasharray="3,2"/>
+<!-- Web Services -->
+<rect x="750" y="420" width="180" height="115" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+<text x="840" y="442" fill="#58a6ff" font-size="10" text-anchor="middle" font-weight="bold">Web Services</text>
+<text x="840" y="460" fill="#3fb950" font-size="8" text-anchor="middle">:8073 OpenWebRX+</text>
+<text x="840" y="474" fill="#3fb950" font-size="8" text-anchor="middle">:8073/static/* Bookmarks</text>
+<text x="840" y="488" fill="#3fb950" font-size="8" text-anchor="middle">:8073/static/weatherfax/*</text>
+<text x="840" y="502" fill="#3fb950" font-size="8" text-anchor="middle">:8073/.../station.html</text>
+<text x="840" y="520" fill="#f0883e" font-size="8" text-anchor="middle">:8074 KiwiSDR Web UI</text>
+<line x1="540" y1="455" x2="750" y2="470" stroke="#21262d" stroke-width="1" stroke-dasharray="3,2"/>
 
 <!-- Legend -->
-<text x="30" y="660" fill="#484f58" font-size="8">Solid lines = coax/antenna cables | Dashed lines = USB/Ethernet data | Colors match antenna assignment</text>
-<text x="30" y="675" fill="#484f58" font-size="8">Green = MLA-30+ HF path | Blue = Tram Discone VHF/UHF | Purple = Rooftop antenna | Orange = KiwiSDR Ethernet</text>
+<rect x="20" y="700" width="920" height="55" rx="5" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+<text x="40" y="718" fill="#c9d1d9" font-size="9" font-weight="bold">Legend:</text>
+<line x1="40" y1="732" x2="65" y2="732" stroke="#3fb950" stroke-width="2"/>
+<text x="70" y="736" fill="#8b949e" font-size="8">MLA-30+ RG-174</text>
+<line x1="195" y1="732" x2="220" y2="732" stroke="#ff9800" stroke-width="2"/>
+<text x="225" y="736" fill="#8b949e" font-size="8">Tram RG-174</text>
+<line x1="330" y1="732" x2="355" y2="732" stroke="#2196f3" stroke-width="2"/>
+<text x="360" y="736" fill="#8b949e" font-size="8">Rooftop RG-6</text>
+<line x1="460" y1="732" x2="485" y2="732" stroke="#484f58" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="490" y="736" fill="#8b949e" font-size="8">USB</text>
+<line x1="530" y1="732" x2="555" y2="732" stroke="#f0883e" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="560" y="736" fill="#8b949e" font-size="8">Ethernet</text>
+<line x1="630" y1="732" x2="655" y2="732" stroke="#58a6ff" stroke-width="2"/>
+<text x="660" y="736" fill="#8b949e" font-size="8">Gigabit ETH</text>
+<text x="40" y="748" fill="#484f58" font-size="7">Seattle, WA | All antennas attic-mounted | 4 SDR receivers | 3 antennas | 481 bookmarks</text>
 
 </svg>
 </div>
@@ -405,6 +406,110 @@ p{color:#8b949e;font-size:0.85em;line-height:1.6;margin:8px 0}
 <tr><td>Full Band Scan</td><td>Weekly (Saturday 23:00 UTC)</td><td>rtl_power + soapy_power</td></tr>
 <tr><td>Schedule Conflict Check</td><td>Weekly</td><td>Python crontab analyzer</td></tr>
 </table>
+
+<!-- STATION TODO / IMPROVEMENTS -->
+<h2 id="todo">Station Improvements</h2>
+<p>Track planned upgrades and their impact on performance. Check items off as completed.</p>
+
+<div id="todo-list" style="margin:15px 0">
+</div>
+
+<script>
+var todos = [];
+var TODO_API = 'http://' + window.location.hostname + ':8075';
+
+function loadTodos() {
+    fetch(TODO_API + '/todos')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            todos = data;
+            renderTodos();
+        })
+        .catch(function(e) {
+            document.getElementById('todo-list').innerHTML = '<div style="color:#f85149;padding:20px;text-align:center">Todo API not responding on port 8075. Start it with: sudo systemctl start sdr-todo</div>';
+        });
+}
+
+function saveTodos() {
+    fetch(TODO_API + '/todos', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(todos)
+    }).catch(function(e) { console.log('Save failed:', e); });
+}
+
+function renderTodos() {
+    var container = document.getElementById('todo-list');
+    var cats = {};
+    todos.forEach(function(t) {
+        if (!cats[t.category]) cats[t.category] = [];
+        cats[t.category].push(t);
+    });
+
+    var html = '';
+    var done_count = todos.filter(function(t){return t.done}).length;
+    var total = todos.length;
+    var pct = Math.round(100 * done_count / total);
+
+    // Progress bar
+    html += '<div style="background:#21262d;border-radius:8px;height:24px;margin:10px 0;overflow:hidden;position:relative">';
+    html += '<div style="background:#3fb950;height:100%;width:' + pct + '%;transition:width 0.3s"></div>';
+    html += '<div style="position:absolute;top:0;left:0;right:0;text-align:center;line-height:24px;font-size:0.8em;color:#c9d1d9">' + done_count + ' / ' + total + ' complete (' + pct + '%)</div>';
+    html += '</div>';
+
+    var catOrder = ['Hardware','Antenna','Calibration','Security','Software'];
+    var catColors = {Hardware:'#f0883e',Antenna:'#3fb950',Calibration:'#58a6ff',Security:'#f85149',Software:'#a371f7'};
+
+    catOrder.forEach(function(cat) {
+        if (!cats[cat]) return;
+        html += '<h3 style="color:' + (catColors[cat]||'#c9d1d9') + ';margin:15px 0 8px 0;font-size:0.95em">' + cat + '</h3>';
+
+        cats[cat].forEach(function(t, i) {
+            var opacity = t.done ? '0.6' : '1';
+            var strike = t.done ? 'text-decoration:line-through' : '';
+            var priColor = t.priority === 'High' ? '#f85149' : (t.priority === 'Medium' ? '#ffa657' : '#484f58');
+
+            html += '<div style="background:#161b22;border:1px solid #21262d;border-radius:8px;padding:12px;margin:6px 0;opacity:' + opacity + '">';
+            html += '<div style="display:flex;align-items:center;gap:8px">';
+            html += '<input type="checkbox" ' + (t.done ? 'checked' : '') + ' onchange="toggleTodo(\'' + t.id + '\')" style="width:18px;height:18px;cursor:pointer">';
+            html += '<span style="flex:1;' + strike + ';font-size:0.9em">' + t.text + '</span>';
+            html += '<span style="color:' + priColor + ';font-size:0.7em;border:1px solid ' + priColor + ';padding:1px 6px;border-radius:3px">' + t.priority + '</span>';
+            html += '</div>';
+            html += '<div style="color:#8b949e;font-size:0.78em;margin:5px 0 0 26px">' + t.impact + '</div>';
+
+            // Baseline & result fields
+            html += '<div style="margin:8px 0 0 26px;display:flex;gap:8px;flex-wrap:wrap">';
+            html += '<div style="flex:1;min-width:200px"><label style="color:#484f58;font-size:0.7em;display:block">Before (baseline measurement)</label>';
+            html += '<input type="text" value="' + (t.baseline||'').replace(/"/g,'&quot;') + '" onchange="setBaseline(\'' + t.id + '\',this.value)" placeholder="e.g., ADS-B range 47 miles, SNR 35 dB" style="width:100%;background:#0d1117;border:1px solid #30363d;color:#c9d1d9;padding:4px 6px;border-radius:4px;font-size:0.8em"></div>';
+            html += '<div style="flex:1;min-width:200px"><label style="color:#484f58;font-size:0.7em;display:block">After (result)</label>';
+            html += '<input type="text" value="' + (t.result||'').replace(/"/g,'&quot;') + '" onchange="setResult(\'' + t.id + '\',this.value)" placeholder="e.g., ADS-B range 156 miles, SNR 42 dB" style="width:100%;background:#0d1117;border:1px solid #30363d;color:#c9d1d9;padding:4px 6px;border-radius:4px;font-size:0.8em"></div>';
+            html += '</div>';
+
+            html += '</div>';
+        });
+    });
+
+    container.innerHTML = html;
+}
+
+function toggleTodo(id) {
+    todos.forEach(function(t) { if (t.id === id) t.done = !t.done; });
+    saveTodos();
+    renderTodos();
+}
+
+function setBaseline(id, val) {
+    todos.forEach(function(t) { if (t.id === id) t.baseline = val; });
+    saveTodos();
+}
+
+function setResult(id, val) {
+    todos.forEach(function(t) { if (t.id === id) t.result = val; });
+    saveTodos();
+}
+
+loadTodos();
+</script>
 
 <div style="text-align:center;margin-top:30px;color:#484f58;font-size:0.8em">
 <p>Seattle SDR Station | 481 bookmarks | 4 radios | 3 antennas</p>
